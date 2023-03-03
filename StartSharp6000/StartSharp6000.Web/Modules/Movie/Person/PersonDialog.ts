@@ -11,6 +11,11 @@ namespace StartSharp6000.Movie {
         protected getDeletePermission() { return PersonRow.deletePermission; }
         protected getInsertPermission() { return PersonRow.insertPermission; }
         protected getUpdatePermission() { return PersonRow.updatePermission; }
+        protected afterLoadEntity() {
+            super.afterLoadEntity();
+
+            this.form.MoviesGrid.personID = this.entityId;
+        }
 
         protected form = new PersonForm(this.idPrefix);
 

@@ -27,3 +27,6 @@
 .s-Movie-MovieCastEditDialog .s-PropertyGrid .categories {
     height: 100px;
 }
+.s-Movie-PersonDialog .s-PersonMovieGrid > .grid-container {
+    height: 186px;
+}

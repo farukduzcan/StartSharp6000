@@ -6,6 +6,7 @@
         BirthPlace: Serenity.StringEditor;
         Gender: Serenity.EnumEditor;
         Height: Serenity.IntegerEditor;
+        MoviesGrid: PersonMovieGrid;
     }
 
     export class PersonForm extends Serenity.PrefixedContext {
@@ -23,6 +24,7 @@
                 var w1 = s.DateEditor;
                 var w2 = s.EnumEditor;
                 var w3 = s.IntegerEditor;
+                var w4 = PersonMovieGrid;
 
                 Q.initFormType(PersonForm, [
                     'FirstName', w0,
@@ -30,7 +32,8 @@
                     'BirthDate', w1,
                     'BirthPlace', w0,
                     'Gender', w2,
-                    'Height', w3
+                    'Height', w3,
+                    'MoviesGrid', w4
                 ]);
             }
         }

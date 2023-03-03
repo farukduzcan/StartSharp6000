@@ -886,13 +886,15 @@ var StartSharp6000;
                     var w1 = s.DateEditor;
                     var w2 = s.EnumEditor;
                     var w3 = s.IntegerEditor;
+                    var w4 = Movie.PersonMovieGrid;
                     Q.initFormType(PersonForm, [
                         'FirstName', w0,
                         'Lastname', w0,
                         'BirthDate', w1,
                         'BirthPlace', w0,
                         'Gender', w2,
-                        'Height', w3
+                        'Height', w3,
+                        'MoviesGrid', w4
                     ]);
                 }
                 return _this;
@@ -2532,58 +2534,6 @@ var StartSharp6000;
 (function (StartSharp6000) {
     var Movie;
     (function (Movie) {
-        var MovieCastEditDialog = /** @class */ (function (_super) {
-            __extends(MovieCastEditDialog, _super);
-            function MovieCastEditDialog() {
-                var _this = _super.call(this) || this;
-                _this.form = new Movie.MovieCastForm(_this.idPrefix);
-                return _this;
-            }
-            MovieCastEditDialog.prototype.getFormKey = function () { return Movie.MovieCastForm.formKey; };
-            MovieCastEditDialog.prototype.getNameProperty = function () { return Movie.MovieCastRow.nameProperty; };
-            MovieCastEditDialog.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
-            MovieCastEditDialog = __decorate([
-                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditDialog")
-            ], MovieCastEditDialog);
-            return MovieCastEditDialog;
-        }(Serenity.Extensions.GridEditorDialog));
-        Movie.MovieCastEditDialog = MovieCastEditDialog;
-    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
-})(StartSharp6000 || (StartSharp6000 = {}));
-var StartSharp6000;
-(function (StartSharp6000) {
-    var Movie;
-    (function (Movie) {
-        var MovieCastEditor = /** @class */ (function (_super) {
-            __extends(MovieCastEditor, _super);
-            function MovieCastEditor(container) {
-                return _super.call(this, container) || this;
-            }
-            MovieCastEditor.prototype.getColumnsKey = function () { return "Movie.MovieCast"; };
-            MovieCastEditor.prototype.getDialogType = function () { return Movie.MovieCastEditDialog; };
-            MovieCastEditor.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
-            MovieCastEditor.prototype.getAddButtonCaption = function () {
-                return "Add";
-            };
-            MovieCastEditor.prototype.validateEntity = function (row, id) {
-                if (!_super.prototype.validateEntity.call(this, row, id))
-                    return false;
-                row.PersonFullname = Movie.PersonRow.getLookup()
-                    .itemById[row.PersonId].Fullname;
-                return true;
-            };
-            MovieCastEditor = __decorate([
-                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditor")
-            ], MovieCastEditor);
-            return MovieCastEditor;
-        }(Serenity.Extensions.GridEditorBase));
-        Movie.MovieCastEditor = MovieCastEditor;
-    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
-})(StartSharp6000 || (StartSharp6000 = {}));
-var StartSharp6000;
-(function (StartSharp6000) {
-    var Movie;
-    (function (Movie) {
         var MovieGenresDialog = /** @class */ (function (_super) {
             __extends(MovieGenresDialog, _super);
             function MovieGenresDialog() {
@@ -2648,6 +2598,10 @@ var StartSharp6000;
             PersonDialog.prototype.getDeletePermission = function () { return Movie.PersonRow.deletePermission; };
             PersonDialog.prototype.getInsertPermission = function () { return Movie.PersonRow.insertPermission; };
             PersonDialog.prototype.getUpdatePermission = function () { return Movie.PersonRow.updatePermission; };
+            PersonDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                this.form.MoviesGrid.personID = this.entityId;
+            };
             PersonDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], PersonDialog);
@@ -2677,6 +2631,118 @@ var StartSharp6000;
             return PersonGrid;
         }(Serenity.EntityGrid));
         Movie.PersonGrid = PersonGrid;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var MovieCastEditor = /** @class */ (function (_super) {
+            __extends(MovieCastEditor, _super);
+            function MovieCastEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            MovieCastEditor.prototype.getColumnsKey = function () { return "Movie.MovieCast"; };
+            MovieCastEditor.prototype.getDialogType = function () { return Movie.MovieCastEditDialog; };
+            MovieCastEditor.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
+            MovieCastEditor.prototype.getAddButtonCaption = function () {
+                return "Add";
+            };
+            MovieCastEditor.prototype.validateEntity = function (row, id) {
+                if (!_super.prototype.validateEntity.call(this, row, id))
+                    return false;
+                row.PersonFullname = Movie.PersonRow.getLookup()
+                    .itemById[row.PersonId].Fullname;
+                return true;
+            };
+            MovieCastEditor = __decorate([
+                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditor")
+            ], MovieCastEditor);
+            return MovieCastEditor;
+        }(Serenity.Extensions.GridEditorBase));
+        Movie.MovieCastEditor = MovieCastEditor;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var MovieCastEditDialog = /** @class */ (function (_super) {
+            __extends(MovieCastEditDialog, _super);
+            function MovieCastEditDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new Movie.MovieCastForm(_this.idPrefix);
+                return _this;
+            }
+            MovieCastEditDialog.prototype.getFormKey = function () { return Movie.MovieCastForm.formKey; };
+            MovieCastEditDialog.prototype.getNameProperty = function () { return Movie.MovieCastRow.nameProperty; };
+            MovieCastEditDialog.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
+            MovieCastEditDialog = __decorate([
+                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditDialog")
+            ], MovieCastEditDialog);
+            return MovieCastEditDialog;
+        }(Serenity.Extensions.GridEditorDialog));
+        Movie.MovieCastEditDialog = MovieCastEditDialog;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var PersonMovieGrid = /** @class */ (function (_super) {
+            __extends(PersonMovieGrid, _super);
+            function PersonMovieGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PersonMovieGrid.prototype.getColumnsKey = function () { return "Movie.PersonMovie"; };
+            PersonMovieGrid.prototype.getIdProperty = function () { return Movie.MovieCastRow.idProperty; };
+            PersonMovieGrid.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
+            PersonMovieGrid.prototype.getService = function () { return Movie.MovieCastService.baseUrl; };
+            PersonMovieGrid.prototype.getButtons = function () {
+                return null;
+            };
+            PersonMovieGrid.prototype.getInitialTitle = function () {
+                return null;
+            };
+            PersonMovieGrid.prototype.usePager = function () {
+                return false;
+            };
+            PersonMovieGrid.prototype.getGridCanLoad = function () {
+                return this.personID != null;
+            };
+            Object.defineProperty(PersonMovieGrid.prototype, "personID", {
+                get: function () {
+                    return this._personID;
+                },
+                set: function (value) {
+                    if (this._personID != value) {
+                        this._personID = value;
+                        this.setEquality("PersonId" /* PersonId */, value);
+                        this.refresh();
+                    }
+                },
+                enumerable: false,
+                configurable: true
+            });
+            PersonMovieGrid = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], PersonMovieGrid);
+            return PersonMovieGrid;
+        }(Serenity.EntityGrid));
+        Movie.PersonMovieGrid = PersonMovieGrid;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var PersonMovieColumns = /** @class */ (function () {
+            function PersonMovieColumns() {
+            }
+            PersonMovieColumns.columnsKey = 'Movie.PersonMovie';
+            return PersonMovieColumns;
+        }());
+        Movie.PersonMovieColumns = PersonMovieColumns;
     })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
 })(StartSharp6000 || (StartSharp6000 = {}));
 //# sourceMappingURL=StartSharp6000.Web.js.map
