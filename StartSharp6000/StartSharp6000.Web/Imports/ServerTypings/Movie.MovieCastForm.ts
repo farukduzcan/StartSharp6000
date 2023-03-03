@@ -1,7 +1,7 @@
 ﻿namespace StartSharp6000.Movie {
     export interface MovieCastForm {
         MovieId: Serenity.IntegerEditor;
-        PersonId: Serenity.IntegerEditor;
+        PersonId: Serenity.LookupEditor;
         Character: Serenity.StringEditor;
     }
 
@@ -17,12 +17,13 @@
 
                 var s = Serenity;
                 var w0 = s.IntegerEditor;
-                var w1 = s.StringEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.StringEditor;
 
                 Q.initFormType(MovieCastForm, [
                     'MovieId', w0,
-                    'PersonId', w0,
-                    'Character', w1
+                    'PersonId', w1,
+                    'Character', w2
                 ]);
             }
         }

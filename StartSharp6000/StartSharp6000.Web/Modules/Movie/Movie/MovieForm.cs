@@ -15,6 +15,8 @@ namespace StartSharp6000.Movie.Forms
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        [MovieCastEditor, IgnoreName]
+        public List<MovieCastRow> CastList { get; set; }
         public string Storyline { get; set; }
         public int Year { get; set; }
         public DateTime ReleaseDate { get; set; }

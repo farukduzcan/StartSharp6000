@@ -6,6 +6,7 @@
 /// <reference types="serenity.demo.advancedsamples" />
 /// <reference types="serenity.pro.ui" />
 /// <reference types="serenity.pro.extensions" />
+/// <reference types="serenity.extensions" />
 declare namespace StartSharp6000.Administration {
     class LanguageColumns {
         static columnsKey: string;
@@ -588,7 +589,7 @@ declare namespace StartSharp6000.Movie {
 declare namespace StartSharp6000.Movie {
     interface MovieCastForm {
         MovieId: Serenity.IntegerEditor;
-        PersonId: Serenity.IntegerEditor;
+        PersonId: Serenity.LookupEditor;
         Character: Serenity.StringEditor;
     }
     class MovieCastForm extends Serenity.PrefixedContext {
@@ -674,6 +675,7 @@ declare namespace StartSharp6000.Movie {
     interface MovieForm {
         Title: Serenity.StringEditor;
         Description: Serenity.StringEditor;
+        CastList: MovieCastEditor;
         Storyline: Serenity.StringEditor;
         Year: Serenity.IntegerEditor;
         ReleaseDate: Serenity.DateEditor;
@@ -1207,27 +1209,21 @@ declare namespace StartSharp6000.Movie {
     }
 }
 declare namespace StartSharp6000.Movie {
-    class MovieCastDialog extends Serenity.EntityDialog<MovieCastRow, any> {
+    class MovieCastEditDialog extends Serenity.Extensions.GridEditorDialog<MovieCastRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
+        protected getLocalTextPrefix(): string;
         protected form: MovieCastForm;
+        constructor();
     }
 }
 declare namespace StartSharp6000.Movie {
-    class MovieCastGrid extends Serenity.EntityGrid<MovieCastRow, any> {
+    class MovieCastEditor extends Serenity.Extensions.GridEditorBase<MovieCastRow> {
         protected getColumnsKey(): string;
-        protected getDialogType(): typeof MovieCastDialog;
-        protected getIdProperty(): string;
-        protected getInsertPermission(): string;
+        protected getDialogType(): typeof MovieCastEditDialog;
         protected getLocalTextPrefix(): string;
-        protected getService(): string;
         constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
     }
 }
 declare namespace StartSharp6000.Movie {

@@ -28,7 +28,9 @@ namespace StartSharp6000.Movie
             set => fields.MovieId[this] = value;
         }
 
-        [DisplayName("Person"), NotNull, ForeignKey("[mov].[Person]", "PersonId"), LeftJoin("jPerson"), TextualField("PersonFirstName")]
+        [DisplayName("Actor/Actress"), NotNull, ForeignKey("[mov].[Person]", "PersonId")]
+        [LeftJoin("jPerson"), TextualField("PersonFirstName")]
+        [LookupEditor(typeof(PersonRow))]
         public int? PersonId
         {
             get => fields.PersonId[this];
