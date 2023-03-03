@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\faruk\.nuget\packages\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.5.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\faruk\.nuget\packages\" />
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)serenity.scripts\6.0.0\buildTransitive\Serenity.Scripts.props" Condition="Exists('$(NuGetPackageRoot)serenity.scripts\6.0.0\buildTransitive\Serenity.Scripts.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.extensions\6.0.0\buildTransitive\Serenity.Extensions.props" Condition="Exists('$(NuGetPackageRoot)serenity.extensions\6.0.0\buildTransitive\Serenity.Extensions.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.extensions\6.0.0\buildTransitive\Serenity.Pro.Extensions.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.extensions\6.0.0\buildTransitive\Serenity.Pro.Extensions.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.worklog\6.0.0\buildTransitive\Serenity.Pro.WorkLog.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.worklog\6.0.0\buildTransitive\Serenity.Pro.WorkLog.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.ui\6.0.0\buildTransitive\Serenity.Pro.UI.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.ui\6.0.0\buildTransitive\Serenity.Pro.UI.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.theme\6.0.0\buildTransitive\Serenity.Pro.Theme.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.theme\6.0.0\buildTransitive\Serenity.Pro.Theme.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.organization\6.0.0\buildTransitive\Serenity.Pro.Organization.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.organization\6.0.0\buildTransitive\Serenity.Pro.Organization.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.meeting\6.0.0\buildTransitive\Serenity.Pro.Meeting.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.meeting\6.0.0\buildTransitive\Serenity.Pro.Meeting.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.emailqueue\6.0.0\buildTransitive\Serenity.Pro.EmailQueue.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.emailqueue\6.0.0\buildTransitive\Serenity.Pro.EmailQueue.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.emailclient\6.0.0\buildTransitive\Serenity.Pro.EmailClient.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.emailclient\6.0.0\buildTransitive\Serenity.Pro.EmailClient.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.dataexplorer\6.0.0\buildTransitive\Serenity.Pro.DataExplorer.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.dataexplorer\6.0.0\buildTransitive\Serenity.Pro.DataExplorer.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.pro.dataauditlog\6.0.0\buildTransitive\Serenity.Pro.DataAuditLog.props" Condition="Exists('$(NuGetPackageRoot)serenity.pro.dataauditlog\6.0.0\buildTransitive\Serenity.Pro.DataAuditLog.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.demo.northwind\6.0.0\buildTransitive\Serenity.Demo.Northwind.props" Condition="Exists('$(NuGetPackageRoot)serenity.demo.northwind\6.0.0\buildTransitive\Serenity.Demo.Northwind.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.demo.basicsamples\6.0.0\buildTransitive\Serenity.Demo.BasicSamples.props" Condition="Exists('$(NuGetPackageRoot)serenity.demo.basicsamples\6.0.0\buildTransitive\Serenity.Demo.BasicSamples.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.demo.advancedsamples\6.0.0\buildTransitive\Serenity.Demo.AdvancedSamples.props" Condition="Exists('$(NuGetPackageRoot)serenity.demo.advancedsamples\6.0.0\buildTransitive\Serenity.Demo.AdvancedSamples.props')" />
+    <Import Project="$(NuGetPackageRoot)serenity.assets\6.0.0\buildTransitive\Serenity.Assets.props" Condition="Exists('$(NuGetPackageRoot)serenity.assets\6.0.0\buildTransitive\Serenity.Assets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.typescript.msbuild\4.6.2\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microsoft.typescript.msbuild\4.6.2\build\Microsoft.TypeScript.MSBuild.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_TypeScript_MSBuild Condition=" '$(PkgMicrosoft_TypeScript_MSBuild)' == '' ">C:\Users\faruk\.nuget\packages\microsoft.typescript.msbuild\4.6.2</PkgMicrosoft_TypeScript_MSBuild>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\faruk\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2</PkgMicrosoft_CodeAnalysis_Analyzers>
+  </PropertyGroup>
+</Project>

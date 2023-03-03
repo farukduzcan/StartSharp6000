@@ -1,0 +1,53 @@
+{
+  "RootNamespace": "StartSharp6000",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*",
+      "/wwwroot/Content/serenity/*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "mov.Genre",
+          "Identifier": "Genre",
+          "Module": "Movie",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "mov.Movie",
+          "Identifier": "Movie",
+          "Module": "Movie",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "mov.MovieCast",
+          "Identifier": "MovieCast",
+          "Module": "Movie",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "mov.MovieGenres",
+          "Identifier": "MovieGenres",
+          "Module": "Movie",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "mov.Person",
+          "Identifier": "Person",
+          "Module": "Movie",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Premium",
+    "InitialVersion": "6.0.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartSharp6000.Web", "StartSharp6000\StartSharp6000.Web\StartSharp6000.Web.csproj", "{1232B0F4-CDE0-404E-AA4D-D87CAC3EE7BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1232B0F4-CDE0-404E-AA4D-D87CAC3EE7BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1232B0F4-CDE0-404E-AA4D-D87CAC3EE7BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1232B0F4-CDE0-404E-AA4D-D87CAC3EE7BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1232B0F4-CDE0-404E-AA4D-D87CAC3EE7BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AEEB7EC-C6B6-4D2F-8F75-CF04B705E949}
+	EndGlobalSection
+EndGlobal

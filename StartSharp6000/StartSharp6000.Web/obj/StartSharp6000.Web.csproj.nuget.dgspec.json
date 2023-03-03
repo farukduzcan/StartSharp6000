@@ -1,0 +1,163 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\faruk\\source\\repos\\StartSharp6000\\StartSharp6000\\StartSharp6000.Web\\StartSharp6000.Web.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\faruk\\source\\repos\\StartSharp6000\\StartSharp6000\\StartSharp6000.Web\\StartSharp6000.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\faruk\\source\\repos\\StartSharp6000\\StartSharp6000\\StartSharp6000.Web\\StartSharp6000.Web.csproj",
+        "projectName": "StartSharp6000.Web",
+        "projectPath": "C:\\Users\\faruk\\source\\repos\\StartSharp6000\\StartSharp6000\\StartSharp6000.Web\\StartSharp6000.Web.csproj",
+        "packagesPath": "C:\\Users\\faruk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\faruk\\source\\repos\\StartSharp6000\\StartSharp6000\\StartSharp6000.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\faruk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packages.serenity.is/sorsware-biliim-san-ve-tic-a/CAYt6fJtUUmkbq7VnXOzvQ/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.3, )"
+            },
+            "FluentMigrator.Runner": {
+              "target": "Package",
+              "version": "[3.3.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.3, )"
+            },
+            "Microsoft.TypeScript.MSBuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.6.2, )"
+            },
+            "Serenity.Assets": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Demo.AdvancedSamples": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Demo.BasicSamples": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Demo.Northwind": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Extensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Net.Web": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.DataAuditLog": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.DataExplorer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.EmailClient": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.EmailQueue": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.Extensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.Meeting": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.Organization": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.Theme": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.UI": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Pro.WorkLog": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serenity.Scripts": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

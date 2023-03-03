@@ -1,0 +1,25 @@
+MovieRow
+
+        [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
+        [LookupEditor(typeof(GenreRow), InplaceAdd = true, DialogType = "Movie.Genre")]
+        public int? GenreId
+        {
+            get => fields.GenreId[this];
+            set => fields.GenreId[this] = value;
+        }
+
+        [DisplayName("Genre"), Expression("g.Name")]
+        public string GenreName
+        {
+            get => fields.GenreName[this];
+            set => fields.GenreName[this] = value;
+        }
+
+            public Int32Field GenreId;
+            public StringField GenreName;
+
+MovieColumns
+        [Width(100), QuickFilter]
+        public string GenreName { get; set; }
+MovieForm
+        public int GenreId { get; set; }

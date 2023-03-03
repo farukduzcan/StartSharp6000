@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\StartSharp6000.Web.props" />
+</Project>
