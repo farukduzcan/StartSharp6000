@@ -84,6 +84,13 @@ namespace StartSharp6000.Movie
             get => fields.Kind[this];
             set => fields.Kind[this] = value;
         }
+        [MasterDetailRelation(foreignKey: "MovieId", IncludeColumns = "PersonFullname")]
+        [DisplayName("Cast List"), NotMapped]
+        public List<MovieCastRow> CastList
+        {
+            get => fields.CastList[this];
+            set => fields.CastList[this] = value;
+        }
 
         public MovieRow()
             : base()
@@ -94,6 +101,7 @@ namespace StartSharp6000.Movie
             : base(fields)
         {
         }
+
 
         public class RowFields : RowFieldsBase
         {
@@ -107,6 +115,7 @@ namespace StartSharp6000.Movie
             public EnumField<MovieKind> Kind;
             public EnumField<Status> Status;
             public ListField<Int32> GenreList;
+            public RowListField<MovieCastRow> CastList;
 
         }
     }

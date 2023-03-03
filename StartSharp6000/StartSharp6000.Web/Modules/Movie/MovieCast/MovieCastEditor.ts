@@ -11,6 +11,15 @@
         protected getAddButtonCaption() {
             return "Add";
         }
+        protected validateEntity(row: MovieCastRow, id: number) {
+            if (!super.validateEntity(row, id))
+                return false;
+
+            row.PersonFullname = PersonRow.getLookup()
+                .itemById[row.PersonId].Fullname;
+
+            return true;
+        }
 
     }
 }

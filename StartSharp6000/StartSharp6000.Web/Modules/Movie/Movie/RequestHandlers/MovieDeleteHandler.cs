@@ -13,9 +13,10 @@ namespace StartSharp6000.Movie
 
     public class MovieDeleteHandler : DeleteRequestHandler<MyRow, MyRequest, MyResponse>, IMovieDeleteHandler
     {
-        public MovieDeleteHandler(IRequestContext context)
-             : base(context)
-        {
+        
+            public MovieDeleteHandler(IRequestContext context)
+                    : base(context)
+            {
+            }
         }
     }
-}

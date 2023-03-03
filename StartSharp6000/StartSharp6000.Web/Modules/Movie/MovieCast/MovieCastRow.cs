@@ -113,6 +113,13 @@ namespace StartSharp6000.Movie
             get => fields.PersonLastname[this];
             set => fields.PersonLastname[this] = value;
         }
+        [DisplayName("Actor/Actress"),
+        Expression("(jPerson.Firstname + ' ' + jPerson.Lastname)")]
+        public string PersonFullname
+        {
+            get => fields.PersonFullname[this];
+            set => fields.PersonFullname[this] = value;
+        }
 
         [DisplayName("Person Birth Date"), Expression("jPerson.[BirthDate]")]
         public DateTime? PersonBirthDate
@@ -174,6 +181,7 @@ namespace StartSharp6000.Movie
             public StringField PersonBirthPlace;
             public Int32Field PersonGender;
             public Int32Field PersonHeight;
+            public StringField PersonFullname;
         }
     }
 }

@@ -10,6 +10,7 @@
         Kind?: Web.Modules.Movie.Movie.MovieKind;
         Status?: Web.Modules.Movie.Movie.MovieKind;
         GenreList?: number[];
+        CastList?: MovieCastRow[];
     }
 
     export namespace MovieRow {
@@ -31,7 +32,8 @@
             Runtime = "Runtime",
             Kind = "Kind",
             Status = "Status",
-            GenreList = "GenreList"
+            GenreList = "GenreList",
+            CastList = "CastList"
         }
     }
 }

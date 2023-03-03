@@ -12,11 +12,9 @@ namespace StartSharp6000.Movie.Columns
     [BasedOnRow(typeof(MovieCastRow), CheckNames = true)]
     public class MovieCastColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public int MovieCastId { get; set; }
-        public String MovieTitle { get; set; }
-        public String PersonFirstName { get; set; }
-        [EditLink]
+        [EditLink, Width(220)]
+        public string PersonFullname { get; set; }
+        [EditLink, Width(150)]
         public string Character { get; set; }
     }
 }

@@ -16,3 +16,14 @@
 .s-UserRoleDialog .s-DataGrid {
   height: 100%;
 }
+.s-Movie-MovieCastEditDialog > .size {
+    width: 450px;
+}
+
+.s-Movie-MovieCastEditDialog .caption {
+    width: 120px;
+}
+
+.s-Movie-MovieCastEditDialog .s-PropertyGrid .categories {
+    height: 100px;
+}

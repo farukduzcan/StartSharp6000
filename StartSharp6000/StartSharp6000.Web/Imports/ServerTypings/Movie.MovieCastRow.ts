@@ -18,6 +18,7 @@
         PersonBirthPlace?: string;
         PersonGender?: number;
         PersonHeight?: number;
+        PersonFullname?: string;
     }
 
     export namespace MovieCastRow {
@@ -47,7 +48,8 @@
             PersonBirthDate = "PersonBirthDate",
             PersonBirthPlace = "PersonBirthPlace",
             PersonGender = "PersonGender",
-            PersonHeight = "PersonHeight"
+            PersonHeight = "PersonHeight",
+            PersonFullname = "PersonFullname"
         }
     }
 }

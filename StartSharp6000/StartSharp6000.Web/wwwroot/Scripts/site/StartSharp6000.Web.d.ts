@@ -588,7 +588,6 @@ declare namespace StartSharp6000.Movie {
 }
 declare namespace StartSharp6000.Movie {
     interface MovieCastForm {
-        MovieId: Serenity.IntegerEditor;
         PersonId: Serenity.LookupEditor;
         Character: Serenity.StringEditor;
     }
@@ -618,6 +617,7 @@ declare namespace StartSharp6000.Movie {
         PersonBirthPlace?: string;
         PersonGender?: number;
         PersonHeight?: number;
+        PersonFullname?: string;
     }
     namespace MovieCastRow {
         const idProperty = "MovieCastId";
@@ -645,7 +645,8 @@ declare namespace StartSharp6000.Movie {
             PersonBirthDate = "PersonBirthDate",
             PersonBirthPlace = "PersonBirthPlace",
             PersonGender = "PersonGender",
-            PersonHeight = "PersonHeight"
+            PersonHeight = "PersonHeight",
+            PersonFullname = "PersonFullname"
         }
     }
 }
@@ -778,6 +779,7 @@ declare namespace StartSharp6000.Movie {
         Kind?: Web.Modules.Movie.Movie.MovieKind;
         Status?: Web.Modules.Movie.Movie.MovieKind;
         GenreList?: number[];
+        CastList?: MovieCastRow[];
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -797,7 +799,8 @@ declare namespace StartSharp6000.Movie {
             Runtime = "Runtime",
             Kind = "Kind",
             Status = "Status",
-            GenreList = "GenreList"
+            GenreList = "GenreList",
+            CastList = "CastList"
         }
     }
 }
@@ -1224,6 +1227,7 @@ declare namespace StartSharp6000.Movie {
         protected getLocalTextPrefix(): string;
         constructor(container: JQuery);
         protected getAddButtonCaption(): string;
+        protected validateEntity(row: MovieCastRow, id: number): boolean;
     }
 }
 declare namespace StartSharp6000.Movie {
