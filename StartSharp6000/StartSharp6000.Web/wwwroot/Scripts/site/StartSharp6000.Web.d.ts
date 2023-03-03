@@ -677,6 +677,8 @@ declare namespace StartSharp6000.Movie {
         Title: Serenity.StringEditor;
         Description: Serenity.StringEditor;
         CastList: MovieCastEditor;
+        PrimaryImage: Serenity.ImageUploadEditor;
+        GalleryImages: Serenity.MultipleImageUploadEditor;
         Storyline: Serenity.StringEditor;
         Year: Serenity.IntegerEditor;
         ReleaseDate: Serenity.DateEditor;
@@ -780,6 +782,8 @@ declare namespace StartSharp6000.Movie {
         Status?: Web.Modules.Movie.Movie.MovieKind;
         GenreList?: number[];
         CastList?: MovieCastRow[];
+        PrimaryImage?: string;
+        GalleryImages?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -800,7 +804,9 @@ declare namespace StartSharp6000.Movie {
             Kind = "Kind",
             Status = "Status",
             GenreList = "GenreList",
-            CastList = "CastList"
+            CastList = "CastList",
+            PrimaryImage = "PrimaryImage",
+            GalleryImages = "GalleryImages"
         }
     }
 }
@@ -830,6 +836,8 @@ declare namespace StartSharp6000.Movie {
     interface PersonForm {
         FirstName: Serenity.StringEditor;
         Lastname: Serenity.StringEditor;
+        PrimaryImage: Serenity.ImageUploadEditor;
+        GalleryImages: Serenity.MultipleImageUploadEditor;
         BirthDate: Serenity.DateEditor;
         BirthPlace: Serenity.StringEditor;
         Gender: Serenity.EnumEditor;
@@ -852,6 +860,8 @@ declare namespace StartSharp6000.Movie {
         Height?: number;
         Fullname?: string;
         Gender?: Gender;
+        PrimaryImage?: string;
+        GalleryImages?: string;
     }
     namespace PersonRow {
         const idProperty = "PersonId";
@@ -871,7 +881,9 @@ declare namespace StartSharp6000.Movie {
             BirthPlace = "BirthPlace",
             Height = "Height",
             Fullname = "Fullname",
-            Gender = "Gender"
+            Gender = "Gender",
+            PrimaryImage = "PrimaryImage",
+            GalleryImages = "GalleryImages"
         }
     }
 }

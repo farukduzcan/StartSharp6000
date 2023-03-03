@@ -11,6 +11,8 @@
         Status?: Web.Modules.Movie.Movie.MovieKind;
         GenreList?: number[];
         CastList?: MovieCastRow[];
+        PrimaryImage?: string;
+        GalleryImages?: string;
     }
 
     export namespace MovieRow {
@@ -33,7 +35,9 @@
             Kind = "Kind",
             Status = "Status",
             GenreList = "GenreList",
-            CastList = "CastList"
+            CastList = "CastList",
+            PrimaryImage = "PrimaryImage",
+            GalleryImages = "GalleryImages"
         }
     }
 }

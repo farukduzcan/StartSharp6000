@@ -71,6 +71,21 @@ namespace StartSharp6000.Movie
             get => fields.Height[this];
             set => fields.Height[this] = value;
         }
+        [DisplayName("Primary Image"), Size(100),
+        ImageUploadEditor(FilenameFormat = "Person/PrimaryImage/~")]
+        public string PrimaryImage
+        {
+            get => fields.PrimaryImage[this];
+            set => fields.PrimaryImage[this] = value;
+        }
+
+        [DisplayName("Gallery Images"),
+         MultipleImageUploadEditor(FilenameFormat = "Person/GalleryImages/~")]
+        public string GalleryImages
+        {
+            get => fields.GalleryImages[this];
+            set => fields.GalleryImages[this] = value;
+        }
 
         public PersonRow()
             : base()
@@ -92,6 +107,8 @@ namespace StartSharp6000.Movie
             public Int32Field Height;
             public StringField Fullname;
             public EnumField<Gender> Gender;
+            public StringField PrimaryImage;
+            public StringField GalleryImages;
         }
     }
 }

@@ -30,3 +30,6 @@
 .s-Movie-PersonDialog .s-PersonMovieGrid > .grid-container {
     height: 186px;
 }
+.s-Movie-PersonDialog .s-PersonMovieGrid > .grid-container {
+    height: 500px;
+}

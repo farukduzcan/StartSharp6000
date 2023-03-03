@@ -2,6 +2,7 @@
 namespace StartSharp6000.Movie {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.panel()
     export class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
         protected getFormKey() { return PersonForm.formKey; }
         protected getIdProperty() { return PersonRow.idProperty; }
