@@ -23,6 +23,7 @@ namespace StartSharp6000.Movie.Columns
         public DateTime ReleaseDate { get; set; }
         [Width(200), GenreListFormatter, QuickFilter]
         public List<int> GenreList { get; set; }
+        [DisplayName("Runtime in Minutes"), Width(150), AlignRight] //Buraya eklediğimiz Displayname özelliği ana bölümdeki yani Row'daki DName'i ezdi bu sayede buraya yazılan geçerli olmuş oldu
         public int Runtime { get; set; }
         public MovieKind Kind { get; set; }
         public Status Status { get; set; }

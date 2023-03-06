@@ -10,20 +10,21 @@ using System.IO;
 
 namespace StartSharp6000.Movie
 {
+    //Movie "Row" kısmında yaptığımız değişiklikler sunucu tarafı olan Movie columuns ve kullanıcı tarafı olan movie form'da otomatik değişir.
     [ConnectionKey("Default"), Module("Movie"), TableName("[mov].[Movie]")]
-    [DisplayName("Movie"), InstanceName("Movie")]
+    [DisplayName("Movies"), InstanceName("Movie")] //Display name ile sayfamızın başında görülen "movie" yazısını "Movies" olarak düzelttik
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class MovieRow : Row<MovieRow.RowFields>, IIdRow, INameRow
     {
-        [DisplayName("Movie Id"), Identity, IdProperty]
+        [DisplayName("Movie Id"), Identity, IdProperty] //Display Name kolonda ve formda gözüken isim
         public int? MovieId
         {
             get => fields.MovieId[this];
             set => fields.MovieId[this] = value;
         }
 
-        [DisplayName("Title"), Size(200), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Title"), Size(200), NotNull, QuickSearch, NameProperty] //Quick Search üst tarafta arama yapıldığında aradığı kısımdır yani Title kolonunda arama yapacak buna göre
         public string Title
         {
             get => fields.Title[this];

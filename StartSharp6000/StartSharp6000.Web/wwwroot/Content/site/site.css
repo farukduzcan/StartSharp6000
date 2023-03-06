@@ -2,6 +2,16 @@
   width: 100%;
 }
 
+/*formdaki diyalog pencere boyutlarýmýzý ayarladýk*/
+.s-MovieTutorial-Movie-MovieDialog > .size { 
+    width: 650px;
+    height: 450px;
+}
+
+.s-MovieTutorial-Movie-MovieDialog .caption {
+    width: 150px;
+}
+
 .s-UserPermissionDialog > .size,
 .s-RolePermissionDialog > .size,
 .s-UserRoleDialog > .size {

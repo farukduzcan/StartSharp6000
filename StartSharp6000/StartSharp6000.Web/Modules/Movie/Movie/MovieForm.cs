@@ -14,6 +14,7 @@ namespace StartSharp6000.Movie.Forms
     public class MovieForm
     {
         public string Title { get; set; }
+        [TextAreaEditor(Rows = 3)] // Yazılacak alanı büyütür
         public string Description { get; set; }
         [MovieCastEditor, IgnoreName]
         public List<MovieCastRow> CastList { get; set; }

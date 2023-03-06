@@ -675,7 +675,7 @@ declare namespace StartSharp6000.Movie {
 declare namespace StartSharp6000.Movie {
     interface MovieForm {
         Title: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         CastList: MovieCastEditor;
         PrimaryImage: Serenity.ImageUploadEditor;
         GalleryImages: Serenity.MultipleImageUploadEditor;
@@ -848,6 +848,11 @@ declare namespace StartSharp6000.Movie {
         static formKey: string;
         private static init;
         constructor(prefix: string);
+    }
+}
+declare namespace StartSharp6000.Movie {
+    class PersonMovieColumns {
+        static columnsKey: string;
     }
 }
 declare namespace StartSharp6000.Movie {
@@ -1225,6 +1230,25 @@ declare namespace StartSharp6000.Movie {
     }
 }
 declare namespace StartSharp6000.Movie {
+    class MovieCastEditDialog extends Serenity.Extensions.GridEditorDialog<MovieCastRow> {
+        protected getFormKey(): string;
+        protected getNameProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: MovieCastForm;
+        constructor();
+    }
+}
+declare namespace StartSharp6000.Movie {
+    class MovieCastEditor extends Serenity.Extensions.GridEditorBase<MovieCastRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MovieCastEditDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
+        protected validateEntity(row: MovieCastRow, id: number): boolean;
+    }
+}
+declare namespace StartSharp6000.Movie {
     class MovieGenresDialog extends Serenity.EntityDialog<MovieGenresRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1273,25 +1297,6 @@ declare namespace StartSharp6000.Movie {
     }
 }
 declare namespace StartSharp6000.Movie {
-    class MovieCastEditor extends Serenity.Extensions.GridEditorBase<MovieCastRow> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof MovieCastEditDialog;
-        protected getLocalTextPrefix(): string;
-        constructor(container: JQuery);
-        protected getAddButtonCaption(): string;
-        protected validateEntity(row: MovieCastRow, id: number): boolean;
-    }
-}
-declare namespace StartSharp6000.Movie {
-    class MovieCastEditDialog extends Serenity.Extensions.GridEditorDialog<MovieCastRow> {
-        protected getFormKey(): string;
-        protected getNameProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected form: MovieCastForm;
-        constructor();
-    }
-}
-declare namespace StartSharp6000.Movie {
     class PersonMovieGrid extends Serenity.EntityGrid<PersonRow, any> {
         protected getColumnsKey(): string;
         protected getIdProperty(): string;
@@ -1305,10 +1310,5 @@ declare namespace StartSharp6000.Movie {
         private _personID;
         get personID(): number;
         set personID(value: number);
-    }
-}
-declare namespace StartSharp6000.Movie {
-    class PersonMovieColumns {
-        static columnsKey: string;
     }
 }

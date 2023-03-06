@@ -721,26 +721,27 @@ var StartSharp6000;
                     MovieForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = Movie.MovieCastEditor;
-                    var w2 = s.ImageUploadEditor;
-                    var w3 = s.MultipleImageUploadEditor;
-                    var w4 = s.IntegerEditor;
-                    var w5 = s.DateEditor;
-                    var w6 = s.LookupEditor;
-                    var w7 = s.EnumEditor;
+                    var w1 = s.TextAreaEditor;
+                    var w2 = Movie.MovieCastEditor;
+                    var w3 = s.ImageUploadEditor;
+                    var w4 = s.MultipleImageUploadEditor;
+                    var w5 = s.IntegerEditor;
+                    var w6 = s.DateEditor;
+                    var w7 = s.LookupEditor;
+                    var w8 = s.EnumEditor;
                     Q.initFormType(MovieForm, [
                         'Title', w0,
-                        'Description', w0,
-                        'CastList', w1,
-                        'PrimaryImage', w2,
-                        'GalleryImages', w3,
+                        'Description', w1,
+                        'CastList', w2,
+                        'PrimaryImage', w3,
+                        'GalleryImages', w4,
                         'Storyline', w0,
-                        'Year', w4,
-                        'ReleaseDate', w5,
-                        'Runtime', w4,
-                        'GenreList', w6,
-                        'Kind', w7,
-                        'Status', w7
+                        'Year', w5,
+                        'ReleaseDate', w6,
+                        'Runtime', w5,
+                        'GenreList', w7,
+                        'Kind', w8,
+                        'Status', w8
                     ]);
                 }
                 return _this;
@@ -911,6 +912,19 @@ var StartSharp6000;
             return PersonForm;
         }(Serenity.PrefixedContext));
         Movie.PersonForm = PersonForm;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var PersonMovieColumns = /** @class */ (function () {
+            function PersonMovieColumns() {
+            }
+            PersonMovieColumns.columnsKey = 'Movie.PersonMovie';
+            return PersonMovieColumns;
+        }());
+        Movie.PersonMovieColumns = PersonMovieColumns;
     })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
 })(StartSharp6000 || (StartSharp6000 = {}));
 var StartSharp6000;
@@ -2542,6 +2556,58 @@ var StartSharp6000;
 (function (StartSharp6000) {
     var Movie;
     (function (Movie) {
+        var MovieCastEditDialog = /** @class */ (function (_super) {
+            __extends(MovieCastEditDialog, _super);
+            function MovieCastEditDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new Movie.MovieCastForm(_this.idPrefix);
+                return _this;
+            }
+            MovieCastEditDialog.prototype.getFormKey = function () { return Movie.MovieCastForm.formKey; };
+            MovieCastEditDialog.prototype.getNameProperty = function () { return Movie.MovieCastRow.nameProperty; };
+            MovieCastEditDialog.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
+            MovieCastEditDialog = __decorate([
+                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditDialog")
+            ], MovieCastEditDialog);
+            return MovieCastEditDialog;
+        }(Serenity.Extensions.GridEditorDialog));
+        Movie.MovieCastEditDialog = MovieCastEditDialog;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
+        var MovieCastEditor = /** @class */ (function (_super) {
+            __extends(MovieCastEditor, _super);
+            function MovieCastEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            MovieCastEditor.prototype.getColumnsKey = function () { return "Movie.MovieCast"; };
+            MovieCastEditor.prototype.getDialogType = function () { return Movie.MovieCastEditDialog; };
+            MovieCastEditor.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
+            MovieCastEditor.prototype.getAddButtonCaption = function () {
+                return "Add";
+            };
+            MovieCastEditor.prototype.validateEntity = function (row, id) {
+                if (!_super.prototype.validateEntity.call(this, row, id))
+                    return false;
+                row.PersonFullname = Movie.PersonRow.getLookup()
+                    .itemById[row.PersonId].Fullname;
+                return true;
+            };
+            MovieCastEditor = __decorate([
+                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditor")
+            ], MovieCastEditor);
+            return MovieCastEditor;
+        }(Serenity.Extensions.GridEditorBase));
+        Movie.MovieCastEditor = MovieCastEditor;
+    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
+})(StartSharp6000 || (StartSharp6000 = {}));
+var StartSharp6000;
+(function (StartSharp6000) {
+    var Movie;
+    (function (Movie) {
         var MovieGenresDialog = /** @class */ (function (_super) {
             __extends(MovieGenresDialog, _super);
             function MovieGenresDialog() {
@@ -2646,58 +2712,6 @@ var StartSharp6000;
 (function (StartSharp6000) {
     var Movie;
     (function (Movie) {
-        var MovieCastEditor = /** @class */ (function (_super) {
-            __extends(MovieCastEditor, _super);
-            function MovieCastEditor(container) {
-                return _super.call(this, container) || this;
-            }
-            MovieCastEditor.prototype.getColumnsKey = function () { return "Movie.MovieCast"; };
-            MovieCastEditor.prototype.getDialogType = function () { return Movie.MovieCastEditDialog; };
-            MovieCastEditor.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
-            MovieCastEditor.prototype.getAddButtonCaption = function () {
-                return "Add";
-            };
-            MovieCastEditor.prototype.validateEntity = function (row, id) {
-                if (!_super.prototype.validateEntity.call(this, row, id))
-                    return false;
-                row.PersonFullname = Movie.PersonRow.getLookup()
-                    .itemById[row.PersonId].Fullname;
-                return true;
-            };
-            MovieCastEditor = __decorate([
-                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditor")
-            ], MovieCastEditor);
-            return MovieCastEditor;
-        }(Serenity.Extensions.GridEditorBase));
-        Movie.MovieCastEditor = MovieCastEditor;
-    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
-})(StartSharp6000 || (StartSharp6000 = {}));
-var StartSharp6000;
-(function (StartSharp6000) {
-    var Movie;
-    (function (Movie) {
-        var MovieCastEditDialog = /** @class */ (function (_super) {
-            __extends(MovieCastEditDialog, _super);
-            function MovieCastEditDialog() {
-                var _this = _super.call(this) || this;
-                _this.form = new Movie.MovieCastForm(_this.idPrefix);
-                return _this;
-            }
-            MovieCastEditDialog.prototype.getFormKey = function () { return Movie.MovieCastForm.formKey; };
-            MovieCastEditDialog.prototype.getNameProperty = function () { return Movie.MovieCastRow.nameProperty; };
-            MovieCastEditDialog.prototype.getLocalTextPrefix = function () { return Movie.MovieCastRow.localTextPrefix; };
-            MovieCastEditDialog = __decorate([
-                Serenity.Decorators.registerEditor("StartSharp6000.Movie.MovieCastEditDialog")
-            ], MovieCastEditDialog);
-            return MovieCastEditDialog;
-        }(Serenity.Extensions.GridEditorDialog));
-        Movie.MovieCastEditDialog = MovieCastEditDialog;
-    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
-})(StartSharp6000 || (StartSharp6000 = {}));
-var StartSharp6000;
-(function (StartSharp6000) {
-    var Movie;
-    (function (Movie) {
         var PersonMovieGrid = /** @class */ (function (_super) {
             __extends(PersonMovieGrid, _super);
             function PersonMovieGrid(container) {
@@ -2739,19 +2753,6 @@ var StartSharp6000;
             return PersonMovieGrid;
         }(Serenity.EntityGrid));
         Movie.PersonMovieGrid = PersonMovieGrid;
-    })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
-})(StartSharp6000 || (StartSharp6000 = {}));
-var StartSharp6000;
-(function (StartSharp6000) {
-    var Movie;
-    (function (Movie) {
-        var PersonMovieColumns = /** @class */ (function () {
-            function PersonMovieColumns() {
-            }
-            PersonMovieColumns.columnsKey = 'Movie.PersonMovie';
-            return PersonMovieColumns;
-        }());
-        Movie.PersonMovieColumns = PersonMovieColumns;
     })(Movie = StartSharp6000.Movie || (StartSharp6000.Movie = {}));
 })(StartSharp6000 || (StartSharp6000 = {}));
 //# sourceMappingURL=StartSharp6000.Web.js.map

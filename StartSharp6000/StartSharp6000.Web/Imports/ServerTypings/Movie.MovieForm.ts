@@ -1,7 +1,7 @@
 ﻿namespace StartSharp6000.Movie {
     export interface MovieForm {
         Title: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
+        Description: Serenity.TextAreaEditor;
         CastList: MovieCastEditor;
         PrimaryImage: Serenity.ImageUploadEditor;
         GalleryImages: Serenity.MultipleImageUploadEditor;
@@ -26,27 +26,28 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = MovieCastEditor;
-                var w2 = s.ImageUploadEditor;
-                var w3 = s.MultipleImageUploadEditor;
-                var w4 = s.IntegerEditor;
-                var w5 = s.DateEditor;
-                var w6 = s.LookupEditor;
-                var w7 = s.EnumEditor;
+                var w1 = s.TextAreaEditor;
+                var w2 = MovieCastEditor;
+                var w3 = s.ImageUploadEditor;
+                var w4 = s.MultipleImageUploadEditor;
+                var w5 = s.IntegerEditor;
+                var w6 = s.DateEditor;
+                var w7 = s.LookupEditor;
+                var w8 = s.EnumEditor;
 
                 Q.initFormType(MovieForm, [
                     'Title', w0,
-                    'Description', w0,
-                    'CastList', w1,
-                    'PrimaryImage', w2,
-                    'GalleryImages', w3,
+                    'Description', w1,
+                    'CastList', w2,
+                    'PrimaryImage', w3,
+                    'GalleryImages', w4,
                     'Storyline', w0,
-                    'Year', w4,
-                    'ReleaseDate', w5,
-                    'Runtime', w4,
-                    'GenreList', w6,
-                    'Kind', w7,
-                    'Status', w7
+                    'Year', w5,
+                    'ReleaseDate', w6,
+                    'Runtime', w5,
+                    'GenreList', w7,
+                    'Kind', w8,
+                    'Status', w8
                 ]);
             }
         }
