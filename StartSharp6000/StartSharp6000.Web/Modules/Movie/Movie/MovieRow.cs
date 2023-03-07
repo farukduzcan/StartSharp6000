@@ -25,8 +25,8 @@ namespace StartSharp6000.Movie
         }
 
         [DisplayName("Title"), Size(200), NotNull, QuickSearch, NameProperty] //Quick Search üst tarafta arama yapıldığında aradığı kısımdır yani Title kolonunda arama yapacak buna göre
-        public string Title
-        {
+        public string Title                                     //name property bu alanın ad/isim alanı olduğunu belirtir
+        {                                           //QuickSearch'ın bazı özellikleri vardır QuickSearch(SearchType.StartsWith) şeklinde yaparsak yalnızla girilen metinle başlayanları çıkarır karşımıza
             get => fields.Title[this];
             set => fields.Title[this] = value;
         }
@@ -65,7 +65,7 @@ namespace StartSharp6000.Movie
             get => fields.Runtime[this];
             set => fields.Runtime[this] = value;
         }
-        [DisplayName("Kind")]
+        [DisplayName("Kind"),DefaultValue(MovieKind.TvSeries)] //Default value otomatik o alanın neyle doldurulması gerektiğini belirler ilk açıldığında TvSeries seçili olacaktır
         public MovieKind? Kind
         {
             get => fields.Kind[this];
@@ -79,7 +79,7 @@ namespace StartSharp6000.Movie
             get => fields.GenreList[this];
             set => fields.GenreList[this] = value;
         }
-        [DisplayName("Status")]
+        [DisplayName("Status"),QuickFilter] //Status'e göre filitre butonu ekler
         public MovieKind? Status
         {
             get => fields.Kind[this];

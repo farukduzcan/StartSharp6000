@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace StartSharp6000.Web.Modules.Movie.Movie
 {
-    [EnumKey("MovieDB.MovieKind")]
+    [EnumKey("MovieDB.MovieKind")] //kind alanı için seçenekleri burada tanımlıyoruz bunlar statik değerler buradan eklenir veya değiştirilir konsolda bir değişim yapılamaz
     public enum MovieKind
     {
         [Description("Film")]
