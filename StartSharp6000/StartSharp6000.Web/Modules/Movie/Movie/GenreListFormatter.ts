@@ -8,6 +8,7 @@ namespace StartSharp6000.Movie {
                 return "";
 
             let byId = GenreRow.getLookup().itemById;
+            console.log(GenreRow.getLookup());
 
             return idList.map(x => {
                 let g = byId[x];

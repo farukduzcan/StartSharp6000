@@ -28,6 +28,7 @@ namespace StartSharp6000.Movie.Forms
         public List<int> GenreList { get; set; }
         public MovieKind Kind { get; set; }
         public Status Status { get; set; }
+        public int GenreId { get; set; }
 
     }
 }

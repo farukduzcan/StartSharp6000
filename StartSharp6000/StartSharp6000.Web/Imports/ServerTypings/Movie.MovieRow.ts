@@ -13,6 +13,8 @@
         CastList?: MovieCastRow[];
         PrimaryImage?: string;
         GalleryImages?: string;
+        GenreId?: number;
+        GenreName?: string;
     }
 
     export namespace MovieRow {
@@ -37,7 +39,9 @@
             GenreList = "GenreList",
             CastList = "CastList",
             PrimaryImage = "PrimaryImage",
-            GalleryImages = "GalleryImages"
+            GalleryImages = "GalleryImages",
+            GenreId = "GenreId",
+            GenreName = "GenreName"
         }
     }
 }

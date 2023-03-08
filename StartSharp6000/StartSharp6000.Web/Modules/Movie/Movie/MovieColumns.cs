@@ -28,5 +28,7 @@ namespace StartSharp6000.Movie.Columns
         public MovieKind Kind { get; set; }
         public Status Status { get; set; }
 
+        public string GenreName { get; set; }
+
     }
 }

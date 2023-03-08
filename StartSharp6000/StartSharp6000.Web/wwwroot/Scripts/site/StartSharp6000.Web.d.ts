@@ -686,6 +686,7 @@ declare namespace StartSharp6000.Movie {
         GenreList: Serenity.LookupEditor;
         Kind: Serenity.EnumEditor;
         Status: Serenity.EnumEditor;
+        GenreId: Serenity.LookupEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -784,6 +785,8 @@ declare namespace StartSharp6000.Movie {
         CastList?: MovieCastRow[];
         PrimaryImage?: string;
         GalleryImages?: string;
+        GenreId?: number;
+        GenreName?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -806,7 +809,9 @@ declare namespace StartSharp6000.Movie {
             GenreList = "GenreList",
             CastList = "CastList",
             PrimaryImage = "PrimaryImage",
-            GalleryImages = "GalleryImages"
+            GalleryImages = "GalleryImages",
+            GenreId = "GenreId",
+            GenreName = "GenreName"
         }
     }
 }

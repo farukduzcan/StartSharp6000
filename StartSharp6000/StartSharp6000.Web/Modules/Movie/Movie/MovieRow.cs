@@ -31,6 +31,21 @@ namespace StartSharp6000.Movie
             set => fields.Title[this] = value;
         }
 
+        [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g"),LookupEditor(typeof(GenreRow),InplaceAdd =true)]
+        public int? GenreId
+        {
+            get => fields.GenreId[this];
+            set => fields.GenreId[this] = value;
+        }
+
+        [DisplayName("Genre"), Expression("g.Name")]
+        public string GenreName
+        {
+            get => fields.GenreName[this];
+            set => fields.GenreName[this] = value;
+        }
+
+
         [DisplayName("Description"), Size(1000)]
         public string Description
         {
@@ -134,6 +149,9 @@ namespace StartSharp6000.Movie
             public RowListField<MovieCastRow> CastList;
             public StringField PrimaryImage;
             public StringField GalleryImages;
+
+            public Int32Field GenreId;
+            public StringField GenreName;
 
         }
     }

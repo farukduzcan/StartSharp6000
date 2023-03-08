@@ -18,6 +18,11 @@ namespace StartSharp6000.Movie
              : base(context)
         {
         }
+        protected override void OnAfterExecuteQuery()
+        {
+            base.OnAfterExecuteQuery();
+        }
+
         //protected override void ApplyFilters(SqlQuery query)
         //{
         //    base.ApplyFilters(query);

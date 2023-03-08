@@ -12,6 +12,7 @@
         GenreList: Serenity.LookupEditor;
         Kind: Serenity.EnumEditor;
         Status: Serenity.EnumEditor;
+        GenreId: Serenity.LookupEditor;
     }
 
     export class MovieForm extends Serenity.PrefixedContext {
@@ -47,7 +48,8 @@
                     'Runtime', w5,
                     'GenreList', w7,
                     'Kind', w8,
-                    'Status', w8
+                    'Status', w8,
+                    'GenreId', w7
                 ]);
             }
         }
